@@ -1,0 +1,280 @@
+{
+  "version": "1.0.0",
+  "description": "Dog vocalization classification and meaning database",
+  "sources": [
+    "Pongracz et al. (2005) - Acoustic parameters of dog barks carry emotional information",
+    "Yin & McCowan (2004) - Barking in domestic dogs: context specificity and individual identification",
+    "Faragó et al. (2010) - Dogs' expectation about signalers' body size by virtue of their growls",
+    "AudioSet ontology - Google Research",
+    "DogSpeak dataset classifications"
+  ],
+  "vocalization_types": {
+    "alert_bark": {
+      "type": "bark",
+      "subtype": "alert",
+      "label": "Alert/Alarm Bark",
+      "acoustic_features": {
+        "pitch": "mid_to_high",
+        "duration": "short",
+        "repetition": "rapid_series",
+        "tone": "sharp"
+      },
+      "emotions": ["alert", "protective", "warning"],
+      "confidence": 0.80,
+      "description": "Sharp, rapid barking in quick succession",
+      "meaning": "Something has caught my attention! There may be a threat. I'm warning you!",
+      "context": "Common when doorbell rings, stranger approaches, or unusual sound/movement detected",
+      "predicted_behavior": "Will continue barking and may move toward the stimulus. May look to owner for guidance."
+    },
+    "excited_bark": {
+      "type": "bark",
+      "subtype": "excited",
+      "label": "Excited/Play Bark",
+      "acoustic_features": {
+        "pitch": "high",
+        "duration": "short",
+        "repetition": "bursts_with_pauses",
+        "tone": "bright"
+      },
+      "emotions": ["excited", "happy", "playful"],
+      "confidence": 0.85,
+      "description": "High-pitched, short barks often in bursts with brief pauses",
+      "meaning": "I'm so excited! Let's play! This is great!",
+      "context": "During play, greeting favorite people, anticipating walks/treats",
+      "predicted_behavior": "Will likely approach, may bring a toy, may do play bows or zoomies."
+    },
+    "demand_bark": {
+      "type": "bark",
+      "subtype": "demand",
+      "label": "Demand/Attention Bark",
+      "acoustic_features": {
+        "pitch": "mid",
+        "duration": "single_or_spaced",
+        "repetition": "regular_intervals",
+        "tone": "insistent"
+      },
+      "emotions": ["frustrated", "demanding", "impatient"],
+      "confidence": 0.75,
+      "description": "Single barks at regular intervals, persistent and directed at a person",
+      "meaning": "Hey! Pay attention to me! I want something!",
+      "context": "When wanting food, attention, to go outside, or when feeling ignored",
+      "predicted_behavior": "Will stare at owner, may paw at them, will persist until need is met."
+    },
+    "fearful_bark": {
+      "type": "bark",
+      "subtype": "fearful",
+      "label": "Fear Bark",
+      "acoustic_features": {
+        "pitch": "high",
+        "duration": "variable",
+        "repetition": "frantic",
+        "tone": "harsh"
+      },
+      "emotions": ["fearful", "anxious", "distressed"],
+      "confidence": 0.75,
+      "description": "High-pitched, often frantic barking, may break into yelps",
+      "meaning": "I'm scared! Something is wrong! I need help!",
+      "context": "During thunderstorms, fireworks, when cornered or threatened",
+      "predicted_behavior": "May try to flee, hide, or if cornered may snap defensively."
+    },
+    "aggressive_bark": {
+      "type": "bark",
+      "subtype": "aggressive",
+      "label": "Aggressive/Threatening Bark",
+      "acoustic_features": {
+        "pitch": "low",
+        "duration": "sustained",
+        "repetition": "continuous",
+        "tone": "deep_harsh"
+      },
+      "emotions": ["aggressive", "threatening", "territorial"],
+      "confidence": 0.85,
+      "description": "Deep, low-pitched, continuous barking often with growling mixed in",
+      "meaning": "Back off! I will protect myself and my territory!",
+      "context": "Territorial defense, resource guarding, feeling cornered",
+      "predicted_behavior": "May lunge, snap, or bite if the threat doesn't retreat. Give maximum space."
+    },
+    "lonely_bark": {
+      "type": "bark",
+      "subtype": "lonely",
+      "label": "Lonely/Boredom Bark",
+      "acoustic_features": {
+        "pitch": "mid",
+        "duration": "long_pauses",
+        "repetition": "monotonous",
+        "tone": "flat"
+      },
+      "emotions": ["lonely", "bored", "sad"],
+      "confidence": 0.70,
+      "description": "Monotonous barking with long pauses, often goes on for extended periods",
+      "meaning": "I'm alone and I don't like it. Where is everyone?",
+      "context": "When left alone, in kennels, separated from family",
+      "predicted_behavior": "May engage in destructive behavior, pacing, or eventually settle down."
+    },
+    "whine_attention": {
+      "type": "whine",
+      "subtype": "attention",
+      "label": "Attention Whine",
+      "acoustic_features": {
+        "pitch": "high",
+        "duration": "sustained",
+        "repetition": "continuous",
+        "tone": "nasal"
+      },
+      "emotions": ["needy", "wanting", "anticipating"],
+      "confidence": 0.75,
+      "description": "High-pitched, sustained whining directed at a person or object",
+      "meaning": "I want that! Please! I really, really want it!",
+      "context": "When seeing food being prepared, wanting to go outside, wanting attention",
+      "predicted_behavior": "Will fixate on desired object/person, may paw, nudge, or escalate to barking."
+    },
+    "whine_anxious": {
+      "type": "whine",
+      "subtype": "anxious",
+      "label": "Anxious/Stress Whine",
+      "acoustic_features": {
+        "pitch": "high",
+        "duration": "intermittent",
+        "repetition": "irregular",
+        "tone": "trembling"
+      },
+      "emotions": ["anxious", "stressed", "uncomfortable"],
+      "confidence": 0.80,
+      "description": "High-pitched whining with trembling quality, often accompanied by pacing",
+      "meaning": "I'm not comfortable. Something is making me nervous.",
+      "context": "New environments, vet visits, separation anxiety, storms",
+      "predicted_behavior": "May pace, seek comfort from owner, try to hide, or exhibit displacement behaviors."
+    },
+    "whimper_pain": {
+      "type": "whimper",
+      "subtype": "pain",
+      "label": "Pain Whimper",
+      "acoustic_features": {
+        "pitch": "high",
+        "duration": "short_bursts",
+        "repetition": "when_touched_or_moving",
+        "tone": "sharp"
+      },
+      "emotions": ["pain", "distressed"],
+      "confidence": 0.85,
+      "description": "Sharp, short whimpers especially when moving or being touched in specific area",
+      "meaning": "That hurts! I'm in pain!",
+      "context": "Injury, illness, arthritis, post-surgery",
+      "predicted_behavior": "May guard the painful area, limp, become still, or snap if pain area is touched."
+    },
+    "growl_warning": {
+      "type": "growl",
+      "subtype": "warning",
+      "label": "Warning Growl",
+      "acoustic_features": {
+        "pitch": "low",
+        "duration": "sustained",
+        "repetition": "continuous",
+        "tone": "rumbling"
+      },
+      "emotions": ["threatened", "warning", "uncomfortable"],
+      "confidence": 0.90,
+      "description": "Low, sustained rumbling growl, body usually stiff",
+      "meaning": "I'm uncomfortable and I want you to stop/back away. This is my final warning.",
+      "context": "Resource guarding, personal space violation, feeling cornered",
+      "predicted_behavior": "If warning is not heeded, may escalate to snapping or biting. RESPECT THE GROWL."
+    },
+    "growl_play": {
+      "type": "growl",
+      "subtype": "play",
+      "label": "Play Growl",
+      "acoustic_features": {
+        "pitch": "mid_to_high",
+        "duration": "short_bursts",
+        "repetition": "during_play",
+        "tone": "exaggerated"
+      },
+      "emotions": ["playful", "excited", "having_fun"],
+      "confidence": 0.70,
+      "description": "Higher-pitched, exaggerated growl during tug-of-war or wrestling play",
+      "meaning": "This is so fun! I'm playing! Grrr, I'm a tough dog! (but not really)",
+      "context": "During tug games, play wrestling, chasing games",
+      "predicted_behavior": "Will continue playing. Body will be loose and wiggly. May pause and reinitiate."
+    },
+    "howl": {
+      "type": "howl",
+      "subtype": "general",
+      "label": "Howl",
+      "acoustic_features": {
+        "pitch": "variable_rising",
+        "duration": "long_sustained",
+        "repetition": "occasional",
+        "tone": "melodic"
+      },
+      "emotions": ["communicating", "lonely", "responding"],
+      "confidence": 0.75,
+      "description": "Long, sustained vocalization with rising and falling pitch",
+      "meaning": "I'm here! Can you hear me? I'm calling to my pack!",
+      "context": "Response to sirens/music, separation, communication with distant dogs, breed-specific",
+      "predicted_behavior": "Will often tilt head back, may continue if stimulus persists. Usually self-limiting."
+    },
+    "yelp": {
+      "type": "yelp",
+      "subtype": "surprise_pain",
+      "label": "Yelp",
+      "acoustic_features": {
+        "pitch": "very_high",
+        "duration": "very_short",
+        "repetition": "single_or_few",
+        "tone": "sharp_piercing"
+      },
+      "emotions": ["pain", "surprise", "startled"],
+      "confidence": 0.85,
+      "description": "Single, sharp, high-pitched cry",
+      "meaning": "Ouch! That hurt! / You startled me!",
+      "context": "Stepped on paw, sudden pain, bitten too hard during play, startled",
+      "predicted_behavior": "Will likely withdraw from the stimulus. May limp or guard injured area."
+    },
+    "sigh": {
+      "type": "sigh",
+      "subtype": "contentment_or_resignation",
+      "label": "Deep Sigh",
+      "acoustic_features": {
+        "pitch": "low",
+        "duration": "single_exhale",
+        "repetition": "single",
+        "tone": "breathy"
+      },
+      "emotions": ["content", "resigned", "relaxed"],
+      "confidence": 0.65,
+      "description": "Deep exhalation, often while lying down",
+      "meaning": "Context-dependent: While settling = 'I'm content'. After denied something = 'Fine, I give up.'",
+      "context": "Settling down for rest, after being denied something they wanted",
+      "predicted_behavior": "Will likely settle down and rest. Generally indicates transition to calm state."
+    },
+    "panting_stressed": {
+      "type": "panting",
+      "subtype": "stressed",
+      "label": "Stress Panting",
+      "acoustic_features": {
+        "pitch": "none",
+        "duration": "continuous",
+        "repetition": "rapid",
+        "tone": "heavy_breathing"
+      },
+      "emotions": ["stressed", "anxious", "overheated"],
+      "confidence": 0.60,
+      "description": "Rapid, heavy panting when not hot or after exercise",
+      "meaning": "I'm stressed out. Something is making me very uncomfortable.",
+      "context": "Vet visits, car rides, storms, new scary environments",
+      "predicted_behavior": "May pace, drool excessively, seek escape routes, or try to hide."
+    },
+    "no_vocalization": {
+      "type": "silence",
+      "subtype": "none",
+      "label": "No Vocalization",
+      "acoustic_features": {},
+      "emotions": ["calm", "focused", "content", "ambiguous"],
+      "confidence": 0.50,
+      "description": "Dog is not making any sounds",
+      "meaning": "Relies entirely on body language for interpretation",
+      "context": "Normal resting state, focused attention, or silent warning (freeze)",
+      "predicted_behavior": "Depends entirely on body language context."
+    }
+  }
+}

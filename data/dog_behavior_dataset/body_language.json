@@ -1,0 +1,332 @@
+{
+  "version": "1.0.0",
+  "description": "Comprehensive dog body language signals database compiled from veterinary ethology research",
+  "sources": [
+    "American Kennel Club (AKC) body language guide",
+    "ASPCA animal behavior resources",
+    "Dr. Sophia Yin - Body Language of Fear in Dogs",
+    "Patricia McConnell - For the Love of a Dog",
+    "Stanley Coren - How to Speak Dog",
+    "DogFACS (Dog Facial Action Coding System)",
+    "Journal of Veterinary Behavior research papers"
+  ],
+  "tail_signals": {
+    "high_fast_wag": {
+      "position": "high",
+      "movement": "fast_wag",
+      "label": "High, Fast Wag",
+      "emotions": ["excited", "happy", "aroused"],
+      "confidence": 0.75,
+      "description": "Tail held high with rapid side-to-side movement",
+      "context_notes": "Generally positive but can indicate high arousal. Check body tension - stiff body + high fast wag can mean overstimulation."
+    },
+    "high_slow_wag": {
+      "position": "high",
+      "movement": "slow_wag",
+      "label": "High, Slow Wag",
+      "emotions": ["alert", "assessing", "cautious"],
+      "confidence": 0.65,
+      "description": "Tail held high with deliberate, slow side-to-side movement",
+      "context_notes": "Dog is evaluating the situation. Not necessarily friendly - may be deciding how to react."
+    },
+    "high_stiff": {
+      "position": "high",
+      "movement": "stiff",
+      "label": "High and Stiff",
+      "emotions": ["dominant", "alert", "potentially_aggressive"],
+      "confidence": 0.80,
+      "description": "Tail held rigid and vertical with minimal movement",
+      "context_notes": "Warning signal. Dog is asserting dominance or feeling threatened. Do not approach without caution."
+    },
+    "mid_relaxed_wag": {
+      "position": "mid",
+      "movement": "relaxed_wag",
+      "label": "Natural Position, Relaxed Wag",
+      "emotions": ["content", "happy", "relaxed"],
+      "confidence": 0.85,
+      "description": "Tail at natural resting height with gentle, loose wag",
+      "context_notes": "Most reliable indicator of a happy, relaxed dog. The whole backend often moves with the tail."
+    },
+    "mid_helicopter": {
+      "position": "mid",
+      "movement": "circular",
+      "label": "Helicopter Wag",
+      "emotions": ["extremely_happy", "excited", "greeting"],
+      "confidence": 0.90,
+      "description": "Tail spinning in full circles, whole body wiggling",
+      "context_notes": "Reserved for greetings and extreme joy. Very reliable positive signal."
+    },
+    "low_slow_wag": {
+      "position": "low",
+      "movement": "slow_wag",
+      "label": "Low, Slow Wag",
+      "emotions": ["insecure", "submissive", "uncertain"],
+      "confidence": 0.70,
+      "description": "Tail held low with tentative, slow wagging",
+      "context_notes": "Dog is unsure but trying to be friendly. May be anxious about the interaction."
+    },
+    "low_stiff": {
+      "position": "low",
+      "movement": "stiff",
+      "label": "Low and Stiff",
+      "emotions": ["anxious", "stressed", "uncomfortable"],
+      "confidence": 0.75,
+      "description": "Tail held low and rigid, close to hind legs",
+      "context_notes": "Dog is experiencing stress. Give them space and remove stressors."
+    },
+    "tucked": {
+      "position": "tucked",
+      "movement": "none",
+      "label": "Tucked Between Legs",
+      "emotions": ["fearful", "terrified", "extremely_submissive"],
+      "confidence": 0.90,
+      "description": "Tail tucked tightly against belly between hind legs",
+      "context_notes": "Strong fear or extreme submission. Dog feels very threatened. Do not approach - let them retreat."
+    }
+  },
+  "ear_signals": {
+    "forward_erect": {
+      "position": "forward",
+      "label": "Forward and Erect",
+      "emotions": ["alert", "interested", "confident"],
+      "confidence": 0.75,
+      "description": "Ears pointed forward and upright",
+      "context_notes": "Dog is focused on something. Could be curiosity or preparation for action."
+    },
+    "slightly_forward": {
+      "position": "slightly_forward",
+      "label": "Slightly Forward",
+      "emotions": ["curious", "engaged", "friendly"],
+      "confidence": 0.70,
+      "description": "Ears tilted slightly forward from natural position",
+      "context_notes": "Interested and engaged. Common during positive interactions."
+    },
+    "relaxed_natural": {
+      "position": "natural",
+      "label": "Natural/Relaxed",
+      "emotions": ["calm", "content", "relaxed"],
+      "confidence": 0.80,
+      "description": "Ears in their natural resting position",
+      "context_notes": "Dog is comfortable and at ease in their environment."
+    },
+    "slightly_back": {
+      "position": "slightly_back",
+      "label": "Slightly Back",
+      "emotions": ["friendly", "submissive", "appeasing"],
+      "confidence": 0.65,
+      "description": "Ears pulled slightly back from natural position",
+      "context_notes": "Often a friendly, appeasing gesture. Common during greetings."
+    },
+    "pinned_flat": {
+      "position": "flat",
+      "label": "Pinned Flat Against Head",
+      "emotions": ["fearful", "anxious", "extremely_submissive"],
+      "confidence": 0.85,
+      "description": "Ears pressed tightly against the skull",
+      "context_notes": "Strong fear or extreme submission. Combined with other fear signals, dog needs space."
+    },
+    "one_forward_one_back": {
+      "position": "asymmetric",
+      "label": "One Forward, One Back",
+      "emotions": ["uncertain", "conflicted", "processing"],
+      "confidence": 0.60,
+      "description": "Ears in different positions",
+      "context_notes": "Dog is processing mixed signals or conflicting emotions."
+    }
+  },
+  "posture_signals": {
+    "play_bow": {
+      "stance": "play_bow",
+      "label": "Play Bow",
+      "emotions": ["playful", "happy", "inviting"],
+      "confidence": 0.95,
+      "description": "Front end lowered with elbows on ground, rear end raised, tail usually wagging",
+      "context_notes": "Universal dog play invitation. One of the most reliable signals. Often accompanied by excited barks."
+    },
+    "standing_relaxed": {
+      "stance": "standing_relaxed",
+      "label": "Relaxed Standing",
+      "emotions": ["calm", "content", "neutral"],
+      "confidence": 0.80,
+      "description": "Weight evenly distributed, muscles relaxed, mouth slightly open",
+      "context_notes": "Dog is comfortable and at ease. Body is loose and fluid."
+    },
+    "standing_alert": {
+      "stance": "standing_alert",
+      "label": "Alert Standing",
+      "emotions": ["alert", "focused", "watchful"],
+      "confidence": 0.75,
+      "description": "Weight slightly forward, muscles tense, mouth closed, ears forward",
+      "context_notes": "Dog has detected something interesting or concerning. Evaluating situation."
+    },
+    "forward_lean": {
+      "stance": "forward_lean",
+      "label": "Forward Lean/Lunge Posture",
+      "emotions": ["assertive", "dominant", "potentially_aggressive"],
+      "confidence": 0.80,
+      "description": "Body weight shifted forward, chest out, standing tall",
+      "context_notes": "Warning posture. Dog is trying to appear larger. May escalate if the perceived threat doesn't back off."
+    },
+    "cowering": {
+      "stance": "cowering",
+      "label": "Cowering/Crouching",
+      "emotions": ["fearful", "submissive", "anxious"],
+      "confidence": 0.85,
+      "description": "Body low to ground, head lowered, trying to appear small",
+      "context_notes": "Dog is frightened and trying to make themselves as small as possible. Needs reassurance and space."
+    },
+    "belly_up": {
+      "stance": "belly_up",
+      "label": "Belly Up/Roll Over",
+      "emotions": ["submissive", "trusting", "playful"],
+      "confidence": 0.75,
+      "description": "Rolling onto back, exposing belly",
+      "context_notes": "Context-dependent: relaxed body = trust/requesting belly rubs. Tense body with averted gaze = submissive/appeasement."
+    },
+    "stiff_freeze": {
+      "stance": "freeze",
+      "label": "Freeze/Stiffening",
+      "emotions": ["stressed", "warning", "pre-aggressive"],
+      "confidence": 0.85,
+      "description": "Sudden stillness with rigid body, hard stare",
+      "context_notes": "CRITICAL WARNING. Dog has gone still before deciding fight or flight. Do not approach. Back away slowly."
+    },
+    "whale_eye": {
+      "stance": "whale_eye",
+      "label": "Whale Eye (Showing Whites)",
+      "emotions": ["anxious", "stressed", "uncomfortable"],
+      "confidence": 0.80,
+      "description": "Head turned away but eyes looking back, showing whites of eyes (sclera)",
+      "context_notes": "Dog is uncomfortable with something near them. Often seen when guarding resources or when touched in a way they dislike."
+    },
+    "sitting_relaxed": {
+      "stance": "sitting_relaxed",
+      "label": "Relaxed Sitting",
+      "emotions": ["calm", "content", "attentive"],
+      "confidence": 0.80,
+      "description": "Sitting with weight back, mouth open, relaxed expression",
+      "context_notes": "Dog is comfortable and calm. May be waiting for something or simply resting."
+    },
+    "lying_relaxed": {
+      "stance": "lying_relaxed",
+      "label": "Relaxed Lying Down",
+      "emotions": ["very_relaxed", "content", "sleepy"],
+      "confidence": 0.85,
+      "description": "Lying down with legs extended or curled, body loose",
+      "context_notes": "Dog is very comfortable and feels safe in their environment."
+    }
+  },
+  "hackle_signals": {
+    "raised_full": {
+      "state": "raised",
+      "area": "full_back",
+      "label": "Full Piloerection",
+      "emotions": ["highly_aroused", "fearful", "aggressive"],
+      "confidence": 0.80,
+      "description": "Hair raised from neck to tail base",
+      "context_notes": "Involuntary response to strong emotions. Not always aggression - can be fear, excitement, or uncertainty. Always indicates heightened emotional state."
+    },
+    "raised_shoulders": {
+      "state": "raised",
+      "area": "shoulders_only",
+      "label": "Shoulder Hackles",
+      "emotions": ["confident", "assertive"],
+      "confidence": 0.70,
+      "description": "Hair raised only on shoulders/upper back",
+      "context_notes": "Often indicates confidence rather than fear. Dog is asserting themselves."
+    },
+    "not_raised": {
+      "state": "flat",
+      "area": "none",
+      "label": "Flat/Normal",
+      "emotions": ["calm", "relaxed"],
+      "confidence": 0.60,
+      "description": "Hair lying flat, normal state",
+      "context_notes": "Baseline state - no heightened arousal."
+    }
+  },
+  "mouth_signals": {
+    "open_relaxed": {
+      "state": "open_relaxed",
+      "label": "Open, Relaxed (Smiling)",
+      "emotions": ["happy", "content", "relaxed"],
+      "confidence": 0.80,
+      "description": "Mouth open with tongue out, relaxed jaw",
+      "context_notes": "Classic 'happy dog face'. Tongue may be lolling. Indicates comfort."
+    },
+    "closed_tight": {
+      "state": "closed_tight",
+      "label": "Closed, Tight Lips",
+      "emotions": ["tense", "alert", "stressed"],
+      "confidence": 0.75,
+      "description": "Mouth firmly closed with lips pressed together",
+      "context_notes": "Dog is tense or focused. Combined with hard eyes = warning."
+    },
+    "lip_licking": {
+      "state": "lip_licking",
+      "label": "Lip Licking (Not After Eating)",
+      "emotions": ["anxious", "stressed", "appeasing"],
+      "confidence": 0.70,
+      "description": "Quick tongue flicks over lips when not eating",
+      "context_notes": "Calming signal / stress indicator. Dog is trying to defuse tension."
+    },
+    "yawning": {
+      "state": "yawning",
+      "label": "Yawning (Not Tired)",
+      "emotions": ["stressed", "anxious", "calming"],
+      "confidence": 0.65,
+      "description": "Yawning when not obviously tired",
+      "context_notes": "Displacement behavior indicating stress. Also used as a calming signal to others."
+    },
+    "teeth_bared_snarl": {
+      "state": "snarl",
+      "label": "Snarl / Teeth Bared",
+      "emotions": ["aggressive", "warning", "fearful"],
+      "confidence": 0.90,
+      "description": "Lips pulled back showing teeth with wrinkled muzzle",
+      "context_notes": "CLEAR WARNING. Dog is threatening to bite. Do not approach. Give maximum space."
+    },
+    "panting_heavy": {
+      "state": "panting",
+      "label": "Heavy Panting",
+      "emotions": ["hot", "stressed", "anxious", "excited"],
+      "confidence": 0.55,
+      "description": "Rapid, open-mouth breathing beyond what temperature warrants",
+      "context_notes": "Context-dependent. After exercise or in heat = normal thermoregulation. In calm, cool setting = stress indicator."
+    }
+  },
+  "eye_signals": {
+    "soft_squinting": {
+      "state": "soft",
+      "label": "Soft Eyes / Squinting",
+      "emotions": ["content", "loving", "relaxed"],
+      "confidence": 0.80,
+      "description": "Eyes slightly squinted, relaxed eyelids",
+      "context_notes": "Sign of affection and contentment. 'Slow blinks' are often a sign of love."
+    },
+    "hard_stare": {
+      "state": "hard",
+      "label": "Hard Stare / Fixed Gaze",
+      "emotions": ["warning", "aggressive", "dominant"],
+      "confidence": 0.85,
+      "description": "Unblinking, intense, fixed stare with dilated pupils",
+      "context_notes": "SERIOUS WARNING. Direct, unbroken eye contact is a challenge in dog language. Combined with stiff body = imminent aggression."
+    },
+    "averted_gaze": {
+      "state": "averted",
+      "label": "Averted Gaze / Looking Away",
+      "emotions": ["submissive", "calming", "uncomfortable"],
+      "confidence": 0.70,
+      "description": "Deliberately looking away, avoiding eye contact",
+      "context_notes": "Calming signal. Dog is trying to appear non-threatening or is uncomfortable."
+    },
+    "wide_whale_eye": {
+      "state": "whale_eye",
+      "label": "Whale Eye (Sclera Showing)",
+      "emotions": ["anxious", "stressed", "uncomfortable"],
+      "confidence": 0.80,
+      "description": "Head turned but eyes looking sideways, whites of eyes visible",
+      "context_notes": "Dog is uncomfortable. Often seen during unwanted handling or resource guarding."
+    }
+  }
+}

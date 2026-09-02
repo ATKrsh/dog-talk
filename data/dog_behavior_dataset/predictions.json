@@ -1,0 +1,300 @@
+{
+  "version": "1.0.0",
+  "description": "Combined signal patterns with behavior predictions and confidence scores",
+  "signal_combinations": [
+    {
+      "id": "playful_invitation",
+      "name": "Play Invitation",
+      "emoji": "🎾",
+      "signals": {
+        "posture": ["play_bow"],
+        "tail": ["high_fast_wag", "mid_relaxed_wag", "mid_helicopter"],
+        "ears": ["forward_erect", "slightly_forward"],
+        "vocalization": ["excited_bark", "growl_play"],
+        "hackles": ["not_raised"]
+      },
+      "required_signals": ["posture:play_bow"],
+      "emotion": "playful",
+      "base_confidence": 0.92,
+      "interpretation": "This dog is inviting you (or another dog) to play! The play bow is one of the most reliable and universally understood dog signals — it means 'Everything I do next is just for fun!'",
+      "prediction": {
+        "action": "Will likely approach, may bring a toy, bounce around, or do zoomies",
+        "confidence": 0.88,
+        "warning_level": "none",
+        "safe_to_approach": true
+      }
+    },
+    {
+      "id": "happy_greeting",
+      "name": "Happy Greeting",
+      "emoji": "🥰",
+      "signals": {
+        "posture": ["standing_relaxed"],
+        "tail": ["mid_helicopter", "mid_relaxed_wag", "high_fast_wag"],
+        "ears": ["slightly_back", "slightly_forward"],
+        "vocalization": ["excited_bark", "whine_attention"],
+        "hackles": ["not_raised"],
+        "body": ["wiggling", "loose"]
+      },
+      "required_signals": ["tail:mid_helicopter|mid_relaxed_wag"],
+      "emotion": "extremely_happy",
+      "base_confidence": 0.90,
+      "interpretation": "This dog is thrilled to see you! The whole-body wiggle and enthusiastic tail wag are signs of pure joy. They might jump up or lean against you for pets.",
+      "prediction": {
+        "action": "Will approach enthusiastically, may jump up, lick face, lean against you, or bring a toy",
+        "confidence": 0.85,
+        "warning_level": "none",
+        "safe_to_approach": true
+      }
+    },
+    {
+      "id": "relaxed_content",
+      "name": "Relaxed & Content",
+      "emoji": "😌",
+      "signals": {
+        "posture": ["standing_relaxed", "sitting_relaxed", "lying_relaxed"],
+        "tail": ["mid_relaxed_wag", "low_slow_wag"],
+        "ears": ["relaxed_natural"],
+        "vocalization": ["no_vocalization", "sigh"],
+        "hackles": ["not_raised"],
+        "mouth": ["open_relaxed"]
+      },
+      "required_signals": ["ears:relaxed_natural", "hackles:not_raised"],
+      "emotion": "content",
+      "base_confidence": 0.85,
+      "interpretation": "This dog is feeling calm and content. Their relaxed body language shows they feel safe and comfortable in their environment. A happy dog at peace!",
+      "prediction": {
+        "action": "Will likely stay in place, may settle down for a nap, or gently approach for attention",
+        "confidence": 0.80,
+        "warning_level": "none",
+        "safe_to_approach": true
+      }
+    },
+    {
+      "id": "curious_investigating",
+      "name": "Curious & Investigating",
+      "emoji": "🤔",
+      "signals": {
+        "posture": ["standing_alert"],
+        "tail": ["high_slow_wag", "mid_relaxed_wag"],
+        "ears": ["forward_erect", "slightly_forward"],
+        "vocalization": ["no_vocalization", "whine_attention"],
+        "hackles": ["not_raised"]
+      },
+      "required_signals": ["ears:forward_erect|slightly_forward", "posture:standing_alert"],
+      "emotion": "curious",
+      "base_confidence": 0.78,
+      "interpretation": "This dog has noticed something interesting and is trying to figure it out. Their forward ears and alert stance show focused attention. They're processing information about their environment.",
+      "prediction": {
+        "action": "Will likely move toward the object of interest to investigate, may sniff around, tilt head",
+        "confidence": 0.75,
+        "warning_level": "none",
+        "safe_to_approach": true
+      }
+    },
+    {
+      "id": "alert_watchful",
+      "name": "Alert & Watchful",
+      "emoji": "⚡",
+      "signals": {
+        "posture": ["standing_alert"],
+        "tail": ["high_stiff", "high_slow_wag"],
+        "ears": ["forward_erect"],
+        "vocalization": ["alert_bark", "no_vocalization"],
+        "hackles": ["not_raised", "raised_shoulders"],
+        "mouth": ["closed_tight"]
+      },
+      "required_signals": ["posture:standing_alert", "ears:forward_erect"],
+      "emotion": "alert",
+      "base_confidence": 0.80,
+      "interpretation": "This dog has detected something that has caught their full attention. They're evaluating whether it's a threat or just something interesting. Their body is tense but not aggressive.",
+      "prediction": {
+        "action": "May bark to alert, move toward the stimulus to investigate, or look to owner for guidance",
+        "confidence": 0.72,
+        "warning_level": "low",
+        "safe_to_approach": true
+      }
+    },
+    {
+      "id": "anxious_uncomfortable",
+      "name": "Anxious & Uncomfortable",
+      "emoji": "😰",
+      "signals": {
+        "posture": ["cowering", "whale_eye"],
+        "tail": ["low_stiff", "low_slow_wag", "tucked"],
+        "ears": ["slightly_back", "pinned_flat"],
+        "vocalization": ["whine_anxious", "no_vocalization", "panting_stressed"],
+        "hackles": ["not_raised"],
+        "mouth": ["lip_licking", "yawning", "panting_heavy"]
+      },
+      "required_signals": ["tail:low_stiff|tucked"],
+      "emotion": "anxious",
+      "base_confidence": 0.82,
+      "interpretation": "This dog is feeling anxious and uncomfortable. The low tail, pinned ears, and stress signals like lip-licking show they're not at ease. They need reassurance and possibly distance from whatever is bothering them.",
+      "prediction": {
+        "action": "May try to move away, seek comfort from owner, or freeze. If pushed further, may snap defensively",
+        "confidence": 0.78,
+        "warning_level": "moderate",
+        "safe_to_approach": false
+      }
+    },
+    {
+      "id": "fearful_scared",
+      "name": "Fearful & Scared",
+      "emoji": "😨",
+      "signals": {
+        "posture": ["cowering"],
+        "tail": ["tucked"],
+        "ears": ["pinned_flat"],
+        "vocalization": ["fearful_bark", "whine_anxious", "whimper_pain"],
+        "hackles": ["raised_full", "not_raised"],
+        "mouth": ["lip_licking", "panting_heavy"]
+      },
+      "required_signals": ["posture:cowering", "tail:tucked"],
+      "emotion": "fearful",
+      "base_confidence": 0.88,
+      "interpretation": "This dog is genuinely frightened. They're making themselves as small as possible and showing clear fear signals. Please give them space and don't force any interaction. Let them retreat to safety.",
+      "prediction": {
+        "action": "Will try to flee or hide. If cornered with no escape, may bite defensively out of fear",
+        "confidence": 0.85,
+        "warning_level": "high",
+        "safe_to_approach": false
+      }
+    },
+    {
+      "id": "aggressive_warning",
+      "name": "Aggressive Warning",
+      "emoji": "⚠️",
+      "signals": {
+        "posture": ["forward_lean", "stiff_freeze"],
+        "tail": ["high_stiff"],
+        "ears": ["forward_erect"],
+        "vocalization": ["growl_warning", "aggressive_bark"],
+        "hackles": ["raised_full", "raised_shoulders"],
+        "mouth": ["teeth_bared_snarl"],
+        "eyes": ["hard_stare"]
+      },
+      "required_signals": ["vocalization:growl_warning|aggressive_bark"],
+      "emotion": "aggressive",
+      "base_confidence": 0.92,
+      "interpretation": "⚠️ WARNING: This dog is displaying clear aggressive signals. They feel threatened and are communicating that they WILL defend themselves. DO NOT approach. Back away slowly without making direct eye contact.",
+      "prediction": {
+        "action": "May lunge, snap, or bite if the perceived threat does not retreat immediately",
+        "confidence": 0.90,
+        "warning_level": "critical",
+        "safe_to_approach": false
+      }
+    },
+    {
+      "id": "submissive_appeasing",
+      "name": "Submissive & Appeasing",
+      "emoji": "🙏",
+      "signals": {
+        "posture": ["cowering", "belly_up"],
+        "tail": ["low_slow_wag", "tucked"],
+        "ears": ["pinned_flat", "slightly_back"],
+        "vocalization": ["whine_attention", "no_vocalization"],
+        "hackles": ["not_raised"],
+        "mouth": ["lip_licking"],
+        "eyes": ["averted_gaze"]
+      },
+      "required_signals": ["eyes:averted_gaze|posture:belly_up"],
+      "emotion": "submissive",
+      "base_confidence": 0.80,
+      "interpretation": "This dog is showing submissive body language. They're trying to communicate that they are not a threat. They may roll over to show their belly as the ultimate sign of deference.",
+      "prediction": {
+        "action": "Will avoid confrontation, may roll onto back, lick lips/face, or urinate submissively",
+        "confidence": 0.76,
+        "warning_level": "low",
+        "safe_to_approach": true
+      }
+    },
+    {
+      "id": "frustrated_bored",
+      "name": "Frustrated & Bored",
+      "emoji": "😤",
+      "signals": {
+        "posture": ["standing_relaxed", "standing_alert"],
+        "tail": ["mid_relaxed_wag"],
+        "ears": ["forward_erect", "relaxed_natural"],
+        "vocalization": ["demand_bark", "lonely_bark", "whine_attention"],
+        "hackles": ["not_raised"]
+      },
+      "required_signals": ["vocalization:demand_bark|lonely_bark"],
+      "emotion": "frustrated",
+      "base_confidence": 0.72,
+      "interpretation": "This dog is bored or frustrated. They want something — attention, food, a walk, or mental stimulation. The insistent barking is their way of saying 'Hey, I need something here!'",
+      "prediction": {
+        "action": "May start destructive behavior, continue barking, pace, or bring objects to owner",
+        "confidence": 0.70,
+        "warning_level": "none",
+        "safe_to_approach": true
+      }
+    },
+    {
+      "id": "protective_territorial",
+      "name": "Protective & Territorial",
+      "emoji": "🛡️",
+      "signals": {
+        "posture": ["standing_alert", "forward_lean"],
+        "tail": ["high_stiff", "high_fast_wag"],
+        "ears": ["forward_erect"],
+        "vocalization": ["alert_bark", "aggressive_bark", "growl_warning"],
+        "hackles": ["raised_shoulders", "raised_full"]
+      },
+      "required_signals": ["vocalization:alert_bark", "posture:standing_alert|forward_lean"],
+      "emotion": "protective",
+      "base_confidence": 0.82,
+      "interpretation": "This dog is in protective/territorial mode. They've identified something as a potential intruder and are making it clear this is their territory. They may calm down once the 'threat' is identified as friendly.",
+      "prediction": {
+        "action": "Will continue barking, may charge toward the perceived intruder, will position between threat and family",
+        "confidence": 0.80,
+        "warning_level": "moderate",
+        "safe_to_approach": false
+      }
+    },
+    {
+      "id": "pain_discomfort",
+      "name": "In Pain / Discomfort",
+      "emoji": "🤕",
+      "signals": {
+        "posture": ["cowering", "stiff_freeze"],
+        "tail": ["low_stiff", "tucked"],
+        "ears": ["pinned_flat", "slightly_back"],
+        "vocalization": ["whimper_pain", "yelp", "whine_anxious"],
+        "hackles": ["not_raised"]
+      },
+      "required_signals": ["vocalization:whimper_pain|yelp"],
+      "emotion": "pain",
+      "base_confidence": 0.85,
+      "interpretation": "This dog appears to be in pain or physical discomfort. They may be guarding a specific body part or showing reluctance to move. A veterinary check-up is recommended.",
+      "prediction": {
+        "action": "Will avoid movement, may guard painful area, may snap if pain area is touched",
+        "confidence": 0.82,
+        "warning_level": "moderate",
+        "safe_to_approach": false
+      }
+    }
+  ],
+  "emotion_labels": {
+    "playful": {"color": "#4CAF50", "icon": "🎾", "valence": "positive"},
+    "extremely_happy": {"color": "#FFD700", "icon": "🥰", "valence": "positive"},
+    "content": {"color": "#81C784", "icon": "😌", "valence": "positive"},
+    "curious": {"color": "#42A5F5", "icon": "🤔", "valence": "neutral"},
+    "alert": {"color": "#FFA726", "icon": "⚡", "valence": "neutral"},
+    "anxious": {"color": "#EF5350", "icon": "😰", "valence": "negative"},
+    "fearful": {"color": "#E53935", "icon": "😨", "valence": "negative"},
+    "aggressive": {"color": "#B71C1C", "icon": "⚠️", "valence": "negative"},
+    "submissive": {"color": "#9575CD", "icon": "🙏", "valence": "neutral"},
+    "frustrated": {"color": "#FF7043", "icon": "😤", "valence": "negative"},
+    "protective": {"color": "#5C6BC0", "icon": "🛡️", "valence": "neutral"},
+    "pain": {"color": "#D32F2F", "icon": "🤕", "valence": "negative"}
+  },
+  "warning_levels": {
+    "none": {"color": "#4CAF50", "description": "Safe - dog is friendly or neutral"},
+    "low": {"color": "#FFC107", "description": "Mild caution - dog is uncertain but not threatening"},
+    "moderate": {"color": "#FF9800", "description": "Caution - dog is uncomfortable, approach carefully"},
+    "high": {"color": "#F44336", "description": "Warning - dog is fearful, may bite defensively"},
+    "critical": {"color": "#B71C1C", "description": "Danger - dog is actively threatening, do not approach"}
+  }
+}

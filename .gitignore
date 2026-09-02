@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Models (too large for git)
+server/models/*.pt
+server/models/*.onnx
+server/models/*.tflite
+server/models/*.h5
+server/models/*.pth
+
+# Data (downloaded, not tracked)
+data/raw/
+data/downloads/
+data/dog_pose_dataset/
+data/dogspeak/
+data/esc50/
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/*.iml
+android/.idea/
+android/captures/
+android/.externalNativeBuild/
+android/.cxx/
+
+# IDE
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

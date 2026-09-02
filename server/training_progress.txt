@@ -1,0 +1,22 @@
+==================================================
+🐕 Dog Talk - Custom Model Training (GPU)
+==================================================
+This file updates automatically. No scrolling needed!
+ESTIMATED TIME REMAINING: 0m 0s
+==================================================
+
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Pose(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 54/54 4.9it/s 11.0s
+all       1703       1703      0.963      0.974      0.988      0.865      0.862      0.854      0.805        0.3
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Pose(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 54/54 5.5it/s 9.8s
+all       1703       1703      0.964      0.973      0.988      0.866      0.868      0.852      0.812      0.305
+50 epochs completed in 1.267 hours.
+Optimizer stripped from E:\workspace\dog talk\server\runs\pose\dog_talk_pose_model-5\weights\last.pt, 7.1MB
+Optimizer stripped from E:\workspace\dog talk\server\runs\pose\dog_talk_pose_model-5\weights\best.pt, 7.1MB
+Validating E:\workspace\dog talk\server\runs\pose\dog_talk_pose_model-5\weights\best.pt...
+Ultralytics 8.4.75  Python-3.12.10 torch-2.5.1+cu121 CUDA:0 (NVIDIA GeForce RTX 3050, 8192MiB)
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Pose(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 54/54 5.4it/s 9.9s
+all       1703       1703      0.963      0.972      0.988      0.865      0.869      0.853      0.812      0.305
+Speed: 0.2ms preprocess, 2.2ms inference, 0.0ms loss, 0.7ms postprocess per image
+Results saved to [1mE:\workspace\dog talk\server\runs\pose\dog_talk_pose_model-5[0m
+Training Complete!
+Your new custom dog model is saved at: E:\workspace\dog talk\server\runs\pose\dog_talk_pose_model-5/weights/best.pt
